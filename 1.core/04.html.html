@@ -6,6 +6,7 @@ $(() => {
 	$('footer').html('<mark>foot</mark>');
 	console.log($('footer').html()); // <mark>foot</mark>
 	
+	console.log($('header').find('h1').eq(1).html())
 	$('header').find('h1').eq(1).html('<hr>');
 	
 	$('ul').find('li').eq(2).html('index: 2').end()
