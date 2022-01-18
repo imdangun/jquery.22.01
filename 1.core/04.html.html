@@ -1,0 +1,40 @@
+<script src='http://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script>
+$(() => {
+	console.log($('h1').html()); // <b>hello</b>
+	
+	$('footer').html('<mark>foot</mark>');
+	console.log($('footer').html()); // <mark>foot</mark>
+	
+	$('header').find('h1').eq(1).html('<hr>');
+	
+	$('ul').find('li').eq(2).html('index: 2').end()
+		.eq(3).html('index: 3').end()
+		.eq(4).html('index: 4');
+});
+</script>
+
+<header>
+	<h1><b>hello</b></h1>
+	<h1>world</h1>
+</header>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+<footer></footer>
+
+<!-- 
+- .html():
+  Get the HTML contents of the first element in the set of matched elements.
+  
+- .html(htmlString):
+  Set the HTML contents of each element in the set of matched elements.
+  
+- .end():
+  End the most recent filtering operation in the current chain and return 
+  the set of matched elements to its previous state.
+-->

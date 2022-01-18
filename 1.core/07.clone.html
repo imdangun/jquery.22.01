@@ -1,0 +1,29 @@
+<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+<script>
+$(() => {
+	$('div').clone().appendTo('hr');
+});
+</script>
+
+<style>
+	div {
+		background-color: orange;
+		width : 10rem;
+		height: 10rem;
+		border-radius: 5rem;
+	}
+	
+	hr {
+		border: 0.1rem solid;
+	}
+</style>
+
+<div></div>
+<div></div>
+<hr>
+<hr>
+
+<!-- 
+- .clone():
+   Create a deep copy of the set of matched elements.
+-->

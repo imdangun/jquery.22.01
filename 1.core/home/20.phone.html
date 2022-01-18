@@ -1,0 +1,23 @@
+<script src='http://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script>
+$(() => {	
+	let phoneNum = $('input').val();
+	
+	let refinedPhoneNum = '';
+	for(let char of phoneNum)
+		if('0' <= char && char <= '9') 
+			refinedPhoneNum += char;
+	
+	$('input').val(refinedPhoneNum);	
+	
+	//	
+	$('input').val($('input').val().split('-').join(''));
+	
+	//
+	$('input').val($('input').val().replace(/-/g, ''));
+});
+</script>
+
+<form>
+	<input type='tel' value='010-1234-1234'/>
+</form>

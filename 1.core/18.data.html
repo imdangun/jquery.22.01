@@ -1,0 +1,28 @@
+<script src='http://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script>
+$(() => {
+	$('body').data('foo', 10);
+	$('body').data('bar', {isManual: true});
+	$('body').data({baz: [1, 2], hoi: 'hello'});
+	
+	console.log($('body').data('foo')); // 10
+	console.log($('body').data('bar')); // {isManual: true}
+	
+	console.log($('body').data());
+	// {foo: 10, bar: {…}, baz: Array(2), hoi: "hello"}
+});
+</script>
+
+<!-- 
+- .data( key, value ):
+  Store arbitrary data associated with the matched elements.
+
+- .data( obj ):
+  obj: An object of key-value pairs of data to update.
+  
+- .data( key ):
+  allows us to read data previously associated with DOM elements.
+
+- .data():
+  returns a JavaScript object containing each stored value as a property.
+ -->

@@ -1,0 +1,25 @@
+<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+<script>
+$(() => {
+	let items = [];
+	
+	for(let i = 0; i < 10; i++)
+		items.push(`<li>item ${i}</li>`);
+	
+	$(items.join('')).appendTo('ul');
+});
+</script>
+
+<ul></ul>
+<ul></ul>
+
+<!-- 
+과제8:
+<ul></ul>을
+
+<ul>
+	<li>item 0</li>
+	...
+	<li>item 9</li>
+</ul> 으로 바꾼다.
+-->

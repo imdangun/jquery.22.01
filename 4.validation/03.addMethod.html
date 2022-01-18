@@ -1,0 +1,92 @@
+<meta charset='utf-8'>
+<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js'></script>
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>
+<script>
+$.validator.addMethod(
+	'myPassword',
+	(v, e) => {  
+		// 문자1개 이상, 숫자1개 이상, 문자와숫자 2개이상 5개이하
+		return /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{2,5}$/.test(v);
+		
+		// 문자1개 이상, 숫자1개 이상, 문자와숫자 3개이상 5개이하
+		//return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[~!@#$%^&*()_+])[A-Za-z\d~!@#$%^&*()_+]{3,5}$/.test(v);
+		
+		// 소문자1개 이상, 대문자1개이상, 숫자1개 이상, 문자와숫자 3개이상
+		//return /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z\d]{3,}$/.test(v);
+	},
+	' 에러.'
+);
+
+$.validator.addMethod(
+	'myTel',
+	(v, e) => {  
+		// 010-0000-0000 형식의 전화번호
+		return /^010-\d{3,4}-\d{4}$/.test(v);
+	},
+	' 에러.'
+);
+
+$.validator.addMethod(
+	'myDate',
+	(v, e) => {  
+		// yyyy-MM-dd
+		return /^\d{4}-\d{2}-\d{2}$/.test(v);
+	},
+	' 에러.'
+);
+
+$(() => {	
+	$('form').validate({
+		rules: {
+			password: {
+				required: true,
+				myPassword: true
+			},			
+			tel: {
+				required: true,
+				myTel: true
+			},
+			regDate: {
+				required: true,
+				myDate: true
+			}
+		},
+		
+		messages: {
+			password: {
+				required: '암호를 입력하세요.',
+				myPassword: '암호 형식을 지켜야 합니다.'
+			},
+			tel: {
+				required: '전화번호를 입력하세요.',
+				myTel: '010-xxxx-xxxx 형식으로 입력하세요.'
+			},
+			regDate: {
+				required: '등록일을 입력하세요.',
+				myDate: 'yyyy-MM-dd 형식으로 입력하세요.'
+			}
+		}
+	});
+});
+</script>
+
+<style>
+* {
+	margin: 5px;
+}
+
+label.error {
+	margin-left: 10px;
+	color: red;
+}
+</style>
+
+<form>
+	<label><input type='password' name='password' placeholder='암호'/></label> <br>	
+	<label><input type='tel' name='tel' placeholder='전화'/></label> <br>
+	<label><input type='date' name='regDate'/></label>
+	
+	<br><br>
+	<input type='submit'/>
+</form>

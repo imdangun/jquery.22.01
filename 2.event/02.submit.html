@@ -1,0 +1,20 @@
+<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script>
+$(() => {
+	$('button').click(() => {
+		if($('input').val()) $('form').submit();
+		//else $('span').html('user name is empty.')
+		else $('span').html('<mark> user name is empty.</mark>')
+	});
+});
+</script>
+
+<form action='#'>
+	<input type='text' name='userName'/> <span></span> <br>
+	<button type='button'>submit</button>
+</form>
+
+<!-- 
+- .submit():
+  submit the form.
+ -->

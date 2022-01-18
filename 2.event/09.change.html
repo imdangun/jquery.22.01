@@ -1,0 +1,34 @@
+<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script>
+$(() => {
+	$('select').change(() => {
+		$('p').html($('#fruit').val() + ' / ' 
+				+ $('#greens').val().join(','));
+	});
+});
+</script>
+
+<style>
+p {
+	margin-top: 30px;
+}
+</style>
+
+<select id='fruit'>
+	<option>apple</option>
+	<option>pear</option>
+</select>
+
+<select id='greens' multiple>
+	<option>cucumber</option>
+	<option>cabbage</option>
+	<option>carrot</option>
+</select>
+
+<p></p>
+
+<!-- 
+- .change( handler ):
+  Bind an event handler to the "change" JavaScript event, 
+  or trigger that event on an element.
+ -->

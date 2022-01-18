@@ -1,0 +1,15 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+    let msg = 'div.foo가 '
+
+    $(() => {
+        if($('div.foo')) msg += '있다.'
+        else msg += '없다.'
+
+        console.log(msg)
+    })
+</script>
+
+<body>
+    <div class='foo1'></div>
+</body>

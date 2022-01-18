@@ -1,0 +1,24 @@
+<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script>
+jQuery(document).ready(() => $('body').append('<p>one</p>'));
+
+$(document).ready(() => $('body').append('<p>two</p>'));
+
+let readyFn = () => $('body').append('<p>three</p>');
+$(document).ready(readyFn);
+
+$(() => $('body').append('<p>four</p>'));
+</script>
+
+<!-- 
+- jQuery(element): return A DOM element to wrap in a jQuery object.
+
+- jQuery(selector): A string containing a selector expression.
+
+- .append( content [, content ] )  
+  DOM element, text node, array of elements and text nodes, 
+  HTML string, or jQuery object to insert at the end of 
+  each element in the set of matched elements.
+
+- <h1>hello</h1> HTML element = <h1> element node + 'hello' text node
+-->

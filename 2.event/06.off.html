@@ -1,0 +1,30 @@
+<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+<script>
+$(() => {
+	$('div').on({
+		mousedown: () => $('div').css('background', 'red'),
+		mouseup:   () => $('div').css('background', 'blue'),
+		mouseout:  () => $('div').css('background', '')
+	});
+	
+	$('button').click(() => $('div').off('mouseup'));
+});
+</script>
+
+<style>
+div {
+	width: 10rem;
+	height: 10rem;
+	border-radius: 5rem;
+	border: 0.1rem solid;
+	margin: 1rem;
+}
+</style>
+
+<div></div>
+<button type='button'>remove</button>
+
+<!-- 
+- .off( events [, selector ] [, handler ] ):
+  Remove an event handler.
+ -->

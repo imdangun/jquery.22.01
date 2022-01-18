@@ -1,0 +1,55 @@
+<script src='http://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script>
+$(() => {	
+	$('li').each((i, e) => console.log(i, e.id));
+	/*
+	0 'a'
+	1 'b'
+	2 'c'
+	*/
+	
+	jQuery.each([1, 2, 3, 4], (i, e) => {
+		if(e > 2) return;
+		console.log(e);
+	});
+	/*
+	1
+	2
+	*/	
+	
+	
+	$.each($('li').toArray(), 
+			(i, e) => console.log(i, e.id));
+	/*
+	0 'a'
+	1 'b'
+	2 'c'
+	*/
+	
+	//
+	$.each({name: 'adelia', age: 20},
+			(k, v) => console.log(k + ': ' + v));
+	/*
+	name: adelia
+	age: 20
+	*/
+});
+</script>
+
+<ul>
+	<li id='a'>A</li>
+	<li id='b'>B</li>
+	<li id='c'>C</li>
+</ul>
+
+<!-- 
+- .each( function ):
+  function: Function( Integer index, Element element )
+   is designed to make DOM looping constructs concise and less error-prone.
+ 
+- jQuery.each( array, callback ):
+  callback: Function( Integer indexInArray, Object value )
+
+- jQuery.each( object, callback ):
+  callback: Function( String propertyName, Object valueOfProperty )
+ -->

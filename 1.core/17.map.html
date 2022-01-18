@@ -1,0 +1,42 @@
+<script src='http://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script>
+$(() => {
+	$('li').map((i, e) => console.log(i, e.id));
+	/*
+	0 'a'
+	1 'b'
+	2 'c'
+	*/
+	
+	let obj = $('li').map((i, e) => e.id);
+	console.log(obj); // k.nf.init(3)
+	console.log(obj.get()); // (3) ["a", "b", "c"]
+	console.log(obj.get().join()); // a,b,c
+		
+	//
+	obj = $.map({name: 'adelia', age: 20}, (v, k) => v);
+	console.log(obj); // ['adelia', 20]	
+});
+</script>
+
+<ul>
+	<li id='a'>A</li>
+	<li id='b'>B</li>
+	<li id='c'>C</li>
+</ul>
+
+<!-- 
+- .map(callback):
+  callback: Function( Integer index, Element domElement ) => Object
+  As the return value is a jQuery object, which contains an array.
+
+- jQuery.map( array, callback ):
+  callback: Function( Object elementOfArray, Integer indexInArray ) => Object
+  The function can return any value. 
+  A returned array will be flattened into the resulting array.
+
+- jQuery.map( object, callback ):
+  callback: Function( Object propertyOfObject, String key ) => Object
+  The function can return any value to add to the array. 
+  A returned array will be flattened into the resulting array.
+-->

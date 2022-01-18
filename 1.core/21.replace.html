@@ -1,0 +1,36 @@
+<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script>
+$(() => {
+	let greet = ' hello world ';	
+	log(greet.replace(' ', ''));    // |hello world |
+	log(greet.replaceAll(' ', '')); // |helloworld|	
+	log(greet.replace(/\s/g, ''));  // |helloworld|
+	log(greet.replace(/^\s/g, '')); // |hello world |
+	log(greet.replace(/\s$/g, '')); // | hello world|
+	log(greet.replace(/^\s|\s$/g, '')); // |hello world|	
+	
+	greet = '1-2-3,4,5';
+	log2(greet.replace(/-/g, ''));     // 123,4,5
+	log2(greet.replace(/,/g, ''));     // 1-2-345
+	log2(greet.replace(/[-,]/g, ''));  // 12345
+	
+	greet = '1-,2-,3';
+	log2(greet.replace(/-,/g, '')); // 123
+	
+	greet = 'hello\nworld';
+	log2(greet);
+	/* 
+	hello
+	world
+	*/
+	log2(greet.replace(/\n/g, '')); // helloworld	
+});
+
+function log(str) {
+	console.log('|' + str + '|');
+}
+
+function log2(str) {
+	console.log(str);
+}
+</script>

@@ -1,0 +1,24 @@
+<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script>
+$(() => {
+	$('button').click(() => $('form').submit());
+	
+	$('input[name="userPw"]').keydown((e) => {
+		if(e.keyCode == 13) $('button').click();
+	});
+});
+</script>
+
+<form>
+	<label>ID <input type='text' name='userId'/></label><br>
+	<label>PW <input type='password' name='userPw'/></label><br>
+	<button type='button'>login</button>
+</form>
+
+<!-- 
+- .keydown( handler ):
+   Bind an event handler to the "keydown" JavaScript event, 
+   or trigger that event on an element.
+   
+   https://keycode.info/
+ -->

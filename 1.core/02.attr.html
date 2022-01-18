@@ -1,0 +1,32 @@
+<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script>
+$(() => {
+	// collection 에서 첫번째 원소의 속성값을 읽는다.
+	console.log($('a').attr('href')); // https://www.google.co.kr/
+	
+	// collection 의 모든 원소의 속성값을 쓴다.
+	$('a').attr('href', 'https://www.oracle.com/');	
+
+	$('a').attr({
+		href: 'https://jquery.com/',
+		target: '_blank'
+	});
+	
+	$('a').removeAttr('target');
+});
+</script>
+
+<a href='https://www.google.co.kr/'>google</a>
+<a href='https://www.naver.com/'>naver</a>
+
+<!-- 
+- .attr(attributeName): 
+  Get the value of an attribute for the first element 
+  in the set of matched elements.
+  
+- .attr(attributeName, value): 
+  Set one or more attributes for the set of matched elements.
+
+- .removeAttr(attributeName):
+  Remove an attribute from each element in the set of matched elements.
+-->
