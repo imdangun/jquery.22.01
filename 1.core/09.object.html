@@ -1,22 +1,19 @@
-<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 <script>
 $(() => {
-	let $collection1 = $('div');
-	let $div1 = $collection1.eq(0);
-	let div1 = $collection1.get(0);
-	
-	console.log($collection1);  // S.fn.init(1)
-	console.log($div1);         // S.fn.init(1)
-	console.log(div1);          // <div></div>
-	
-	let $collection2 = $('div');
-	let $div2 = $collection2.eq(0);
-	let div2 = $collection2.get(0);
-	
-	console.log($collection1 == $collection2); // false
-	console.log($div1 == $div2);               // false
-	console.log(div1 == div2);                 // true
-});
+    let $div1 = $('div')
+    let $div2 = $div1.eq(0)
+    let div3 = $div1.get(0)
+    console.log($div1, $div2, div3) // jQuery.fn.init(1) jQuery.fn.init(1) <div></di>
+
+    let $div11 = $('div')
+    let $div22 = $div11.eq(0)
+    let div33 = $div11.get(0)
+    console.log($div1 == $div11, $div2 == $div22, div3 == div33) // false false true
+
+})
 </script>
 
-<div></div>
+<body>
+    <div></div>
+</body>
