@@ -1,22 +1,25 @@
-<script src='http://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 <script>
 $(() => {
-	$('li').map((i, e) => console.log(i, e.id));
-	/*
-	0 'a'
-	1 'b'
-	2 'c'
-	*/
-	
-	let obj = $('li').map((i, e) => e.id);
-	console.log(obj); // k.nf.init(3)
-	console.log(obj.get()); // (3) ["a", "b", "c"]
-	console.log(obj.get().join()); // a,b,c
-		
-	//
-	obj = $.map({name: 'adelia', age: 20}, (v, k) => v);
-	console.log(obj); // ['adelia', 20]	
-});
+    $('li').map((i, e) => console.log(i, e))
+    // 0 <li id="a">..</li>
+    // 1 <li id="b">..</li>
+    // 2 <li id="c">..</li>
+
+    let collection = $('li').map((i, e) => e.id)
+    console.log(collection) // jQuery.fn.init(3) ['a', 'b', 'c']
+    console.log(collection.get()) // ['a', 'b', 'c']
+    console.log(collection.get().join('')) // abc
+
+    //
+    $.map(collection.get(), (e, i) => console.log(i, e))
+    // 0 'a'
+    // 1 'b'
+    // 2 'c'
+
+   let array = $.map({name: 'adelia', age: 20}, (v, k) => v)
+   console.log(array) // ['adelia', 20]
+})
 </script>
 
 <ul>

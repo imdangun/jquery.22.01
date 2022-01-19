@@ -1,39 +1,32 @@
-<script src='http://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 <script>
-$(() => {	
-	$('li').each((i, e) => console.log(i, e.id));
-	/*
-	0 'a'
-	1 'b'
-	2 'c'
-	*/
-	
-	jQuery.each([1, 2, 3, 4], (i, e) => {
-		if(e > 2) return;
-		console.log(e);
-	});
-	/*
-	1
-	2
-	*/	
-	
-	
-	$.each($('li').toArray(), 
-			(i, e) => console.log(i, e.id));
-	/*
-	0 'a'
-	1 'b'
-	2 'c'
-	*/
-	
-	//
-	$.each({name: 'adelia', age: 20},
-			(k, v) => console.log(k + ': ' + v));
-	/*
-	name: adelia
-	age: 20
-	*/
-});
+$(() => {
+    $('li').each((i, e) => console.log(i, e))
+    // 0 <li id="a">..</li>
+    // 1 <li id="b">..</li>
+    // 2 <li id="c">..</li>
+
+    // 과제: 아래 결과가 나오도록, 코드를 수정하라.
+    $('li').each((i, e) => console.log(i, e.id))
+    // 0 'a'
+    // 1 'b'
+    // 2 'c'
+
+    jQuery.each([1, 2, 3, 4], (i, e) => console.log(`[${i}]: `, e))
+    // [0]:  1
+    // [1]:  2
+    // [2]:  3
+    // [3]:  4
+
+    $.each($('li').toArray(), (i, e) => console.log(i, e))
+    // 0 <li id="a">..</li>
+    // 1 <li id="b">..</li>
+    // 2 <li id="c">..</li>
+
+    $.each({name: 'adelia', age: 20}, (k, v) => console.log(k, ':', v))
+    // name : adelia
+    // age : 20
+})
 </script>
 
 <ul>
