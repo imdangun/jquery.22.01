@@ -1,25 +1,24 @@
-<script src='http://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 <script>
 $(() => {
-	let h1 = $('h1');
-	
-	console.log(h1.width(), h1.height()) // 362 37
-	
-	h1.width('10rem');
-	h1.height('10rem');
-	
-	console.log(h1.width(), h1.height()) // 160 160
-});
+    let h1 = $('h1')
+
+    console.log(h1.width(), h1.height()) // 532.812 43
+
+    h1.width('10rem')
+    h1.height('10rem')
+})
 </script>
 
 <style>
-h1 {
-	border: 1px solid;
-}
+    h1 {
+        border: 0.1rem solid;
+    }
 </style>
-
-<h1>HELLO</h1>
-<h1>WORLD</h1>
+<body>
+    <h1>HELLO</h1>
+    <h1>WORLD</h1>
+</body>
 
 <!-- 
 - .width():
