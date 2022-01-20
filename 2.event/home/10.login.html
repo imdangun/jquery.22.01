@@ -1,0 +1,39 @@
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+<script>
+$(() => {
+    $('button').click(() => {
+        $('span').empty()
+        /*
+        let id = $('input[name="id"]')
+        let pw = $('input[name="pw"]')
+
+        if(!id.val()) id.parent().next().text('id를 입력하세요.').css('color', 'red')
+        if(!pw.val()) pw.parent().next().text('pw를 입력하세요.').css('color', 'red')
+        */
+       let isGood = true
+       $('input').each((i, e) => {
+           if(!$(e).val()) {
+               $(e).parent().next().text(`${e.name} 입력하세요.`).css('color', 'red')
+               isGood = false
+           }
+       })
+
+       isGood && $('form').submit()
+    })
+})
+</script>
+
+<body>
+    <form>
+        <label>ID: <input type='text' name='id'/></label> <span></span> <br>
+        <label>PW: <input type='password' name='pw'/></label> <span></span> <br>
+        <button type='button'>로그인</button>
+    </form>
+</body>
+
+<!-- 
+과제: login form 을 구현하라.
+- id, pw 가 입력됐으면 form 을 제출한다.
+- id 혹은 pw가 미입력됐으면, 필드별로 에러메세지를 출력한다.
+- 위 에러의 경우, 폼을 제출하지 않는다.
+-->

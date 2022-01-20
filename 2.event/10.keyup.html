@@ -1,15 +1,16 @@
-<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 <script>
 $(() => {
-	$('input').keyup(function() { 
-		$('p').text($(this).val())
-	})
-});
+    $('input').keyup(function() {
+        $('span').text($(this).val())
+    })
+})
 </script>
 
-<input type='text'/>
-<p></p>
-
+<body>
+    <input type='text'/>
+    <span></span>
+</body>
 <!-- 
 - .keyup( handler ):
    Bind an event handler to the "keyup" JavaScript event, 

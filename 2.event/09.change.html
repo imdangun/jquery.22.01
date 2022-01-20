@@ -1,31 +1,33 @@
-<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 <script>
 $(() => {
-	$('select').change(() => {
-		$('p').html($('#fruit').val() + ' / ' 
-				+ $('#greens').val().join(','));
-	});
-});
+	$('#wrap').on({
+        change() {
+            $('span').text($(this).val())
+        }
+    }, '.c')
+
+    $('#wrap').on('change', '.c', function() {
+        $('span').text($(this).val())
+    })   
+})
 </script>
 
-<style>
-p {
-	margin-top: 30px;
-}
-</style>
+<body>
+	<div id='wrap'>
+		<select id='fruit' class='c'>
+			<option>select1</option>
+			<option>select2</option>
+		</select> 
 
-<select id='fruit'>
-	<option>apple</option>
-	<option>pear</option>
-</select>
+		<input type='checkbox' value='check' class='c'/>
+		<input type='radio' value='radio' class='c'/>
 
-<select id='greens' multiple>
-	<option>cucumber</option>
-	<option>cabbage</option>
-	<option>carrot</option>
-</select>
+		<input type='text' class='c'/>
+	</div>
 
-<p></p>
+    <span></span>
+</body>
 
 <!-- 
 - .change( handler ):

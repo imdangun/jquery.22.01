@@ -1,23 +1,28 @@
-<script src='http://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 <script>
-$(() => {	
-	let phoneNum = $('input').val();
-	
-	let refinedPhoneNum = '';
-	for(let char of phoneNum)
-		if('0' <= char && char <= '9') 
-			refinedPhoneNum += char;
-	
-	$('input').val(refinedPhoneNum);	
-	
-	//	
-	$('input').val($('input').val().split('-').join(''));
-	
-	//
-	$('input').val($('input').val().replace(/-/g, ''));
-});
+$(() => {
+    // $('input').val($('input').val().split('-').join(''))
+
+    //$('input').val($('input').val().replaceAll('-', ''))
+    $('input').val($('input').val().replace(/-/g, ''))
+
+    /*
+    let phoneNum = $('input').val()
+    let refinedPhoneNum = ''
+
+    for(let char of phoneNum)
+        if('0' <= char && char <= '9')
+            refinedPhoneNum += char
+    
+    $('input').val(refinedPhoneNum)
+    */
+})
 </script>
 
-<form>
-	<input type='tel' value='010-1234-1234'/>
-</form>
+<body>
+    <form>
+        <input type='tel' value='010-1234-5678'/>
+    </form>
+</body>
+
+<!-- 과제: tel field value 에서, 숫자만을 남겨라. -->

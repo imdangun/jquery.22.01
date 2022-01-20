@@ -1,18 +1,22 @@
-<script src='https://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 <script>
 $(() => {
-	$('button').click('hello', (e) => {
-		let userName = $('input').val();
-		if(userName == e.data) $('span').text(` correct: ${e.data}`);
-		else $('span').text(' incorrect');
-	});
-});
+    $('button').click('abel', e => {
+        let userName = $('input').val()
+        if(userName == e.data) {
+            $('span').text(` valid: ${e.data}`).show().fadeOut(1000)
+            $('form').submit()
+        } else $('span').text(` invalid: ${userName}`).show()
+    })
+})
 </script>
 
-<form>
-	<input type='text'/><span></span> <br>
-	<button type='button'>OK</button>
-</form>
+<body>
+    <form action='#'>
+        <input type='text' name='userName' placeholder='사용자명'/><span></span><br>
+        <button type='button'>submit</button>
+    </form>
+</body>
 
 <!-- 
 - .click( [eventData ], handler ):

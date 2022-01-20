@@ -1,55 +1,50 @@
-<meta charset='utf-8'/>
-<script src='http://code.jquery.com/jquery-3.5.1.slim.min.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 <script>
 $(() => {
-	let greet = $(':text');	
-	console.log('|' + greet.val() + '|'); // | hello |
-	
-	greet.val(greet.val().trim()); // hello 가 폼에 입력된다.
-	
-	console.log(greet);	// collection{0: input}
-	greet.val((i, v) => `${v} world`); // hello world 폼에 입력된다.
-	console.log(greet.val()); // hello world
-	
-	//
-	$(':checked').each((i, e) => console.log($(e).val()));
-	/*
-	night
-	mountain
-	apple
-	*/
-	
-	//
-	$('input').val(['noon', 'sea']);
-	
-	$('#fruit').val('banana');	
-	$('#greens').val(['cucumber', 'carrot']);
-});
+    // 과제: text field 를 찾아라.
+    let text = $(':text')
+    console.log('|' + text.val() + '|') // | hello | 
+    text.val(text.val().trim())
+    console.log('|' + text.val() + '|') // |hello|
+    
+    text.val((i, v) => `${v} world`)
+
+    // 과제: val()을 사용토록, 에러를 해결하라.
+    $(':checked').each((i, e) => console.log($(e).val()))
+    // night
+    // mountain
+    // apple
+
+    //
+    $('input').val(['noon', 'sea', 'banana']) // banana 는 checked 가 안 된다.
+    $('#fruit').val('banana')
+    $('#greens').val(['cucumber', 'carrot'])
+
+})
 </script>
 
-<form>
-	<input type='text' value=' hello '/>
-	<br>
-	
-	<input type='checkbox' value='night' checked/>밤
-	<input type='checkbox' value='noon'/>낮
-	<br>
-	
-	<input type='radio' value='mountain' checked/>산
-	<input type='radio' value='sea'/>바다
-	<br>
-		
-	<select id='fruit'>
-		<option>apple</option>
-		<option>banana</option>
-	</select>
-	
-	<select id='greens' multiple>
-		<option>cucumber</option>
-		<option>cabbage</option>
-		<option>carrot</option>
-	</select>
-</form>
+<body>
+    <form>
+        <input type='text' value=' hello '/> <br>
+
+        <input type='checkbox' value='night' checked/>밤
+        <input type='checkbox' value='noon'/>낮 <br>
+
+        <input type='radio' value='mountain' checked/>산
+        <input type='radio' value='sea'/>바다 <br>
+
+        <select id='fruit'>
+            <option>apple</option>
+            <option>banana</option>
+        </select>
+
+        <select id='greens' multiple>
+            <option>cucumber</option>
+            <option>cabbage</option>
+            <option>carrot</option>
+        </select>
+    </form>
+</body>
 
 <!-- 
 - .val():
