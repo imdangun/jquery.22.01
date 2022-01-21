@@ -1,30 +1,31 @@
-<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+<script src='https://code.jquery.com/jquery-3.6.0.js'></script>
 <script>
 $(() => {
-	$('button').click(() => {
-		$.ajax({
-			url: '01.data.json',
-			data: {id: 'yellow'},
-			type: 'get',
-			dataType: 'json',
-			success: (data, status, xhr) => {
-				$('<h3>').text(data.userName).appendTo('body');
-				$('<p>').html(status).appendTo('body');
-				console.log(xhr);
-			},
-			error: (xhr, status) => {
-				$('<p>').html(status).appendTo('body');
-			},
-			complete: (xhr, status) => {
-				$('<p>').html(status).appendTo('body');
-				console.log(xhr);
-			}
-		})
-	})
-});
+    $('button').click(() => {
+        $.ajax({
+            url: '01.data.json',
+            data: {id: 'yellow'},
+            type: 'get',
+            dataType: 'json',
+            success: (data, status, xhr) => {
+                $('<h3>').text(data.userName).appendTo('body')
+                $('<p>').html(status).appendTo('body')
+                console.log(xhr)
+            },
+            error: (xhr, status) => {
+               console.log('error: ', status)
+            },
+            complete: (xhr, status) => {               
+                console.log('complete: ', status)
+            }
+        })
+    })
+})
 </script>
 
-<button type='button'>click</button>
+<body>
+    <button type='button'>click</button>
+</body>
 <!-- 
 - jQuery.ajax( [settings ] ):
   settings(PlainObject): A set of key/value pairs that configure the Ajax request. 
